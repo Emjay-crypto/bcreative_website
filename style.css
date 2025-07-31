@@ -1,3 +1,57 @@
+/* Responsive Dropdown Navigation */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #ffb347;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+@media (max-width: 700px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    background: #181818;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 160px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+    border-radius: 0 0 10px 10px;
+    z-index: 1001;
+  }
+  .nav-links.open {
+    display: flex;
+  }
+  .nav-links li {
+    width: 100%;
+    text-align: right;
+    border-bottom: 1px solid #222;
+    margin: 0;
+  }
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+  .nav-links a, .nav-links button {
+    display: block;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border-radius: 0;
+    background: none;
+    color: #ffb347;
+    text-align: right;
+    border: none;
+  }
+  .nav-toggle {
+    display: block;
+  }
+  .main-nav {
+    position: relative;
+  }
+}
 /* Responsive Design */
 html {
   box-sizing: border-box;
@@ -162,56 +216,26 @@ footer {
   flex-direction: column;
   align-items: center;
 }
-.meta-content {
-  width: 100%;
-  padding: 0 1rem;
-}
+/* Meta section styles removed */
 .main-content {
-  margin-left: 180px;
-}
-@media (max-width: 900px) {
-  .meta {
-    width: 120px;
-    padding-top: 1rem;
-  }
-  .main-content {
-    margin-left: 120px;
-  }
-}
-@media (max-width: 600px) {
-  .meta {
-    position: static;
-    width: 100%;
-    height: auto;
-    flex-direction: row;
-    justify-content: flex-start;
-    box-shadow: none;
-    padding: 0.5rem 0.2rem;
-  }
-  .meta-content {
-    padding: 0 0.5rem;
-  }
-  .main-content {
-    margin-left: 0;
-  }
+    margin: 0 auto;
+    min-height: 100vh;
+    max-width: 1200px;
+    padding: 0 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-/* Responsive for popup/modal */
-.search-popup-content {
-  min-width: 220px;
-  max-width: 98vw;
-  padding: 1.2rem 0.7rem 1rem 0.7rem;
+main, .container, section, .cta-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
-/* Gold color for search icon button */
-.search-btn svg {
-    color: #ffb347;
-    transition: color 0.2s;
-}
-.search-btn:hover svg {
-    color: #fffbe6;
-}
-
-/* Search popup styles */
 .search-popup {
     position: fixed;
     top: 0;

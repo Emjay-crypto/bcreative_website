@@ -1,3 +1,17 @@
+// Responsive Dropdown Navigation
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+if (navToggle && navLinks) {
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+  // Optional: close menu when a link is clicked (for better UX)
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 700) navLinks.classList.remove('open');
+    });
+  });
+}
 // --- Search Popup Logic ---
 const searchBtn = document.getElementById('searchBtn');
 const searchPopup = document.getElementById('searchPopup');
